@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 
-import Data from '../data.json';
+import data from '../data.json';
 
 interface WeekdayMapInterface {
   Sunday: string;
@@ -16,7 +16,12 @@ interface WeekdayMapInterface {
   Saturday: string;
 }
 
-const getMaxAmount = (days) => {
+interface Data {
+  day: string;
+  amount: number;
+}
+
+const getMaxAmount = (days: Array<Data>) => {
   let highest = 0;
   days.forEach((day) => {
     if (day.amount > highest) {
@@ -26,12 +31,12 @@ const getMaxAmount = (days) => {
   return highest;
 };
 
-console.log(getMaxAmount(Data));
-getMaxAmount(Data);
+console.log(getMaxAmount(data));
+getMaxAmount(data);
 
 const Home: NextPage = () => {
-  const [highest, setHighest] = useState(getMaxAmount(Data));
-  const daysData = Data;
+  const [highest, setHighest] = useState(getMaxAmount(data));
+  const daysData = data;
 
   const weekday = [
     'Sunday',
