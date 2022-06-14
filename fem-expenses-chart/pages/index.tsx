@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import data from '../data.json';
-import { Data } from './Data';
 
 interface WeekdayMapInterface {
   Sunday: string;
@@ -15,6 +14,11 @@ interface WeekdayMapInterface {
   Thursday: string;
   Friday: string;
   Saturday: string;
+}
+
+interface Data {
+  day: string;
+  amount: number;
 }
 
 function getMaxAmount(days: Array<Data>): number {
