@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import data from '../data.json';
+import { Data } from './Data';
 
 interface WeekdayMapInterface {
   Sunday: string;
@@ -16,12 +17,7 @@ interface WeekdayMapInterface {
   Saturday: string;
 }
 
-interface Data {
-  day: string;
-  amount: number;
-}
-
-const getMaxAmount = (days: Array<Data>) => {
+function getMaxAmount(days: Array<Data>): number {
   let highest = 0;
   days.forEach((day) => {
     if (day.amount > highest) {
@@ -29,12 +25,9 @@ const getMaxAmount = (days: Array<Data>) => {
     }
   });
   return highest;
-};
+}
 
-console.log(getMaxAmount(data));
-getMaxAmount(data);
-
-const Home: NextPage = () => {
+function Home(): JSX.Element {
   const [highest, setHighest] = useState(getMaxAmount(data));
   const daysData = data;
 
@@ -66,29 +59,31 @@ const Home: NextPage = () => {
   const barStyle =
     'w-8  hover:cursor-pointer md:w-11 rounded-md transition-colors duration-200';
 
-  const DaysInfo = () => (
-    <div className='flex flex-row items-end w-full text-center'>
-      {daysData.map((day) => (
-        <div key={day.day}>
-          <div className='w-auto group'>
-            <div className='w-auto p-1 my-2 font-bold text-white transition-opacity duration-500 bg-black rounded-md opacity-0 sm:invisible sm:absolute group-hover:opacity-100'>{`$${day.amount}`}</div>
-            <div className='flex flex-row items-end justify-center h-80'>
-              <div
-                style={{ height: `${(day.amount * 100) / highest}%` }}
-                className={
-                  day.day === Today
-                    ? ` group-hover:bg-teal-200 bg-teal-500 ${barStyle}`
-                    : ` group-hover:bg-red-300 bg-red-400 ${barStyle}`
-                }
-              ></div>
+  function DaysInfo(): JSX.Element {
+    return (
+      <div className='flex flex-row items-end w-full text-center'>
+        {daysData.map((day) => (
+          <div key={day.day}>
+            <div className='w-auto group'>
+              <div className='w-auto p-1 my-2 font-bold text-white transition-opacity duration-500 bg-black rounded-md opacity-0 sm:invisible sm:absolute group-hover:opacity-100'>{`$${day.amount}`}</div>
+              <div className='flex flex-row items-end justify-center h-80'>
+                <div
+                  style={{ height: `${(day.amount * 100) / highest}%` }}
+                  className={
+                    day.day === Today
+                      ? ` group-hover:bg-teal-200 bg-teal-500 ${barStyle}`
+                      : ` group-hover:bg-red-300 bg-red-400 ${barStyle}`
+                  }
+                ></div>
+              </div>
             </div>
-          </div>
 
-          <p className='text-sm text-zinc-500'>{day.day}</p>
-        </div>
-      ))}
-    </div>
-  );
+            <p className='text-sm text-zinc-500'>{day.day}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <>
@@ -98,7 +93,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/images/favicon-32x32.png' />
       </Head>
 
-      <div className='flex flex-col items-center h-screen px-4 py-16 bg-orange-100 '>
+      <div className='flex flex-col items-center justify-center h-screen px-4 py-16 bg-orange-100 '>
         <div>
           <div className='flex items-center justify-between w-full h-32 px-6 text-white bg-red-400 rounded-xl'>
             <div>
@@ -131,6 +126,6 @@ const Home: NextPage = () => {
       </div>
     </>
   );
-};
+}
 
 export default Home;
