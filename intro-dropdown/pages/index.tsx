@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import tonberry from '../public/tonberry.gif';
+import tonberry from '../public/pictures/tonberry.gif';
 
 const Home: NextPage = () => {
   return (
@@ -13,11 +13,12 @@ const Home: NextPage = () => {
           name='description'
           content='Intro Dropdown Frontend Mentor project'
         />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main className='border-2 flex-grow'>
-        <p>Testing</p>
+        <p className=' text-almost-white'>Testing</p>
+        <p className='text-3xl text-medium-gray font-bold'>Testing</p>
+        <p className='text-3xl text-almost-black'>Testing</p>
       </main>
 
       <footer>
@@ -25,7 +26,7 @@ const Home: NextPage = () => {
           Built by{' '}
           <span>
             <a
-              className='text-blue-700 font-bold'
+              className='text-blue-700 cursor-cell font-bold'
               target='_blank'
               rel='noreferrer'
               href='https://github.com/AlsoPeters'
