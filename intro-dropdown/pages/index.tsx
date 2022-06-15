@@ -1,12 +1,13 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
 
-import tonberry from '../public/pictures/tonberry.gif';
+import Head from 'next/head';
+import Nav from '../components/Nav';
+import Body from '../components/Body';
+import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
   return (
-    <div className='border-2 border-red-600 h-screen flex flex-col bg-black text-neutral-300'>
+    <div className='flex flex-col h-screen bg-almost-white'>
       <Head>
         <title>Intro Section with Dropdown Navigation</title>
         <meta
@@ -15,28 +16,9 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <main className='border-2 flex-grow'>
-        <p className=' text-almost-white'>Testing</p>
-        <p className='text-3xl text-medium-gray font-bold'>Testing</p>
-        <p className='text-3xl text-almost-black'>Testing</p>
-      </main>
-
-      <footer>
-        <p className='justify-center items-center gap-1 flex py-2'>
-          Built by{' '}
-          <span>
-            <a
-              className='text-blue-700 cursor-cell font-bold'
-              target='_blank'
-              rel='noreferrer'
-              href='https://github.com/AlsoPeters'
-            >
-              AlsoPeters
-            </a>
-          </span>
-          <Image height={40} width={40} src={tonberry} alt='tonberry'></Image>
-        </p>
-      </footer>
+      <Nav />
+      <Body />
+      <Footer />
     </div>
   );
 };
