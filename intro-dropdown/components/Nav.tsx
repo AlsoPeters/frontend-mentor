@@ -11,6 +11,9 @@ export default function Nav(): JSX.Element {
 
   function menuHelper(e) {
     setActiveMenu(e.target.name);
+    if (activeMenu === e.target.name) {
+      setActiveMenu('');
+    }
   }
 
   return (
