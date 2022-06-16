@@ -8,19 +8,19 @@ export default function FeaturesDropdown() {
     <div className='absolute flex flex-col gap-2 px-4 py-4 mt-4 bg-white rounded-lg -translate-x-14 drop-shadow-2xl text-start'>
       <div className='flex gap-4'>
         <Todo />
-        <p>Todo List</p>
+        <p className='hover:cursor-pointer'>Todo List</p>
       </div>
       <div className='flex gap-4'>
         <Calendar />
-        <p>Calendar</p>
+        <p className='hover:cursor-pointer'>Calendar</p>
       </div>
       <div className='flex gap-4'>
         <Reminders />
-        <p>Reminders</p>
+        <p className='hover:cursor-pointer'>Reminders</p>
       </div>
       <div className='flex gap-4'>
         <Planning />
-        <p>Planning</p>
+        <p className='hover:cursor-pointer'>Planning</p>
       </div>
     </div>
   );
