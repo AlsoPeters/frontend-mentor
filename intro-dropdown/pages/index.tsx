@@ -15,7 +15,6 @@ const Home: NextPage = () => {
           content='Intro Dropdown Frontend Mentor project'
         />
       </Head>
-
       <Nav />
       <Body />
       <Footer />

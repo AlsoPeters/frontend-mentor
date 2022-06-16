@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import tonberry from '../public/pictures/tonberry.gif';
+import tonberry from '../public/photos/tonberry.gif';
 
 export default function Footer() {
   return (
