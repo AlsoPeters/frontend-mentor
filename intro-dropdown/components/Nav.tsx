@@ -7,13 +7,14 @@ import ArrowUp from '../public/photos/icon-arrow-up.svg';
 import ArrowDown from '../public/photos/icon-arrow-down.svg';
 
 export default function Nav(): JSX.Element {
-  const [activeMenu, setActiveMenu] = useState('');
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   function menuHelper(e) {
-    setActiveMenu(e.target.name);
     if (activeMenu === e.target.name) {
-      setActiveMenu('');
+      return setActiveMenu(null);
     }
+    return setActiveMenu(e.target.name);
   }
 
   return (
