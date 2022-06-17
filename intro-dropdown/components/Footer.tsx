@@ -3,7 +3,7 @@ import tonberry from '../public/photos/tonberry.gif';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className=''>
       <p className='flex items-center justify-center gap-1 py-2'>
         Built by{' '}
         <span>
