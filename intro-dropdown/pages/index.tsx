@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
   return (
-    <div className='flex flex-col h-screen bg-almost-white'>
+    <div className='flex flex-col w-full h-screen bg-almost-white'>
       <Head>
         <title>Intro Section with Dropdown Navigation</title>
         <meta
