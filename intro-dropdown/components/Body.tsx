@@ -23,7 +23,7 @@ export default function Body() {
         <button className='px-6 py-3 hover:bg-almost-white hover:text-almost-black bg-almost-black text-almost-white hover:font-bold max-w-fit rounded-xl border-almost-black'>
           Learn more
         </button>
-        <div className='flex py-8 space-x-8 scale-75 justify-evenly'>
+        <div className='flex items-center py-8 space-x-8 scale-75 justify-evenly'>
           <DataBiz />
           <Audiophile />
           <Meet />

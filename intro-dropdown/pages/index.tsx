@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 
 import Head from 'next/head';
+import MobileMenu from '../components/MobileMenu';
 import Nav from '../components/Nav';
 import Body from '../components/Body';
 import Footer from '../components/Footer';
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
         />
         <link rel='icon' href='/photos/favicon-32x32.png' />
       </Head>
+      <MobileMenu />
       <Nav />
       <Body />
       <Footer />
