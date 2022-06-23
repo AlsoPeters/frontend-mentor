@@ -5,7 +5,7 @@ import Planning from '../public/photos/icon-planning.svg';
 
 export default function MobileFeatureDropdown() {
   return (
-    <div className='flex flex-col gap-4 px-6 text-start'>
+    <div className='flex flex-col gap-4 text-start'>
       <div className='flex gap-4'>
         <Todo />
         <p className='hover:cursor-pointer'>Todo List</p>

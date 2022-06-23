@@ -7,14 +7,14 @@ import Maker from '../public/photos/client-maker.svg';
 export default function Body() {
   return (
     <div className='h-full'>
-      <Image
-        width={750}
-        height={564}
-        objectFit='contain'
-        src='/photos/image-hero-mobile.png'
-        alt='mobile hero'
-      />
       <div className='flex flex-col items-center h-full py-8'>
+        <Image
+          width={750}
+          height={564}
+          objectFit='contain'
+          src='/photos/image-hero-mobile.png'
+          alt='mobile hero'
+        />
         <p className='text-4xl font-bold'>Make remote work</p>
         <p className='px-4 py-8 text-center text-gray-500'>
           Get your team in sync, no matter your location. Streamline processes,
