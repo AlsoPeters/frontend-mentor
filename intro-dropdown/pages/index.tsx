@@ -5,10 +5,17 @@ import MobileMenu from '../components/MobileMenu';
 import Nav from '../components/Nav';
 import Body from '../components/Body';
 import Footer from '../components/Footer';
+import { useState } from 'react';
 
 const Home: NextPage = () => {
+  const [mobileMenuActive, setMobileMenuActive] = useState(false);
+
+  function handleMenu() {
+    return setMobileMenuActive(!mobileMenuActive);
+  }
+
   return (
-    <div className='flex flex-col w-full h-screen bg-almost-white'>
+    <div className='flex flex-col w-full h-full bg-almost-white'>
       <Head>
         <title>Intro Section with Dropdown Navigation</title>
         <meta
@@ -17,8 +24,13 @@ const Home: NextPage = () => {
         />
         <link rel='icon' href='/photos/favicon-32x32.png' />
       </Head>
-      <MobileMenu />
-      <Nav />
+      {mobileMenuActive ? (
+        <MobileMenu
+          mobileMenuActive={mobileMenuActive}
+          handleMenu={handleMenu}
+        />
+      ) : null}
+      <Nav handleMenu={handleMenu} />
       <Body />
       <Footer />
     </div>

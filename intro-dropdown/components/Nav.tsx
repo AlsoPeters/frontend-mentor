@@ -8,7 +8,7 @@ import ArrowDown from '../public/photos/icon-arrow-down.svg';
 
 import Menu from '../public/photos/icon-menu.svg';
 
-export default function Nav(): JSX.Element {
+export default function Nav(props): JSX.Element {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -20,9 +20,75 @@ export default function Nav(): JSX.Element {
   }
 
   return (
-    <nav className='flex justify-between px-4 py-6'>
-      <Logo />
-      <Menu />
+    <nav className='flex gap-4 px-4 py-6 bg-green-400'>
+      <div className='flex items-center justify-between w-full'>
+        <div className='flex items-center gap-10'>
+          <div>
+            <Logo />
+          </div>
+          <div className='flex invisible gap-10 lg:visible'>
+            <div className='flex items-center gap-2'>
+              <button
+                onClick={menuHelper}
+                name='features'
+                className='hover:text-almost-black'
+              >
+                Features
+              </button>
+              {activeMenu === 'features' ? <ArrowUp /> : <ArrowDown />}
+            </div>
+            {activeMenu === 'features' ? <FeaturesDropdown /> : null}
+
+            <div className='flex items-center gap-2'>
+              <button
+                onClick={menuHelper}
+                name='company'
+                className='hover:text-almost-black'
+              >
+                Company
+              </button>
+              {activeMenu === 'company' ? <ArrowUp /> : <ArrowDown />}
+            </div>
+            {activeMenu === 'company' ? <CompanyDropdown /> : null}
+            <button
+              onClick={menuHelper}
+              name='careers'
+              className='hover:text-almost-black'
+            >
+              Careers
+            </button>
+            <button
+              onClick={menuHelper}
+              name='about'
+              className='hover:text-almost-black'
+            >
+              About
+            </button>
+          </div>
+        </div>
+
+        <div className='flex invisible gap-10 lg:visible '>
+          <button
+            onClick={menuHelper}
+            name='login'
+            className='hover:text-almost-black'
+          >
+            Login
+          </button>
+
+          <button
+            onClick={menuHelper}
+            name='register'
+            className='px-4 py-2 border-2 border-gray-400 hover:text-almost-black hover:border-almost-black rounded-2xl'
+          >
+            Register
+          </button>
+        </div>
+      </div>
+
+      <div className='flex items-center lg:hidden'>
+        <Menu onClick={props.handleMenu} />
+      </div>
     </nav>
   );
 }
@@ -38,61 +104,7 @@ export default function Nav(): JSX.Element {
 
 //     {/* Start Desktop layout */}
 
-//     <div className='invisible xl:visible'>
-//       <div className='flex items-center gap-2 '>
-//         <button
-//           onClick={menuHelper}
-//           name='features'
-//           className='hover:text-almost-black'
-//         >
-//           Features
-//         </button>
-//         {activeMenu === 'features' ? <ArrowUp /> : <ArrowDown />}
-//       </div>
-//       {activeMenu === 'features' ? <FeaturesDropdown /> : null}
-//     </div>
-//     <div className='invisible xl:visible '>
-//       <div className='flex items-center gap-2'>
-//         <button
-//           onClick={menuHelper}
-//           name='company'
-//           className='hover:text-almost-black'
-//         >
-//           Company
-//         </button>
-//         {activeMenu === 'company' ? <ArrowUp /> : <ArrowDown />}
-//       </div>
-//       {activeMenu === 'company' ? <CompanyDropdown /> : null}
-//     </div>
-//     <button
-//       onClick={menuHelper}
-//       name='careers'
-//       className='invisible hover:text-almost-black xl:visible'
-//     >
-//       Careers
-//     </button>
-//     <button
-//       onClick={menuHelper}
-//       name='about'
-//       className='invisible hover:text-almost-black xl:visible'
-//     >
-//       About
-//     </button>
 //   </div>
 //   <div className='flex gap-8 '>
-//     <button
-//       onClick={menuHelper}
-//       name='login'
-//       className='invisible hover:text-almost-black xl:visible'
-//     >
-//       Login
-//     </button>
-//     <button
-//       onClick={menuHelper}
-//       name='register'
-//       className='invisible px-4 py-2 border-2 border-gray-400 xl:visible xl: hover:text-almost-black hover:border-almost-black rounded-2xl'
-//     >
-//       Register
-//     </button>
 //   </div>
 // </div>
