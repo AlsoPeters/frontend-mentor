@@ -15,7 +15,7 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div className='flex flex-col w-full h-full bg-almost-white'>
+    <div className='flex flex-col w-full h-screen bg-almost-white'>
       <Head>
         <title>Intro Section with Dropdown Navigation</title>
         <meta

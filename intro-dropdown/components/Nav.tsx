@@ -20,14 +20,14 @@ export default function Nav(props): JSX.Element {
   }
 
   return (
-    <nav className='flex gap-4 px-4 py-6 bg-blue-300'>
-      <div className='flex items-center justify-between w-full bg-green-300'>
+    <nav className='flex gap-4 px-4 py-6'>
+      <div className='flex items-center justify-between w-full'>
         <div className='flex items-center gap-10'>
           <div>
             <Logo />
           </div>
           <div className='hidden gap-10 lg:flex'>
-            <div className='flex items-center gap-2 lg:hidden'>
+            <div className='flex items-center gap-2 '>
               <button
                 onClick={menuHelper}
                 name='features'
