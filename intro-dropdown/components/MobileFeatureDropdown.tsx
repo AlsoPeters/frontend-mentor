@@ -3,9 +3,9 @@ import Calendar from '../public/photos/icon-calendar.svg';
 import Reminders from '../public/photos/icon-reminders.svg';
 import Planning from '../public/photos/icon-planning.svg';
 
-export default function FeaturesDropdown() {
+export default function MobileFeatureDropdown() {
   return (
-    <div className='absolute flex flex-col gap-2 px-6 py-4 mt-4 -translate-x-16 translate-y-8 bg-white rounded-lg drop-shadow-2xl text-start'>
+    <div className='flex flex-col gap-4 text-start'>
       <div className='flex gap-4'>
         <Todo />
         <p className='hover:cursor-pointer'>Todo List</p>
