@@ -5,11 +5,11 @@ import MobileFeatureDropdown from './MobileFeatureDropdown';
 import MobileCompanyDropdown from './MobileCompanyDropdown';
 import { useState } from 'react';
 
-export default function MobileMenu(props) {
+export default function MobileMenu(props: any) {
   const [featuresActive, setFeaturesActive] = useState(false);
   const [companyActive, setCompanyActive] = useState(false);
 
-  function menuHelper(e) {
+  function menuHelper(e: any) {
     if (e.target.name === 'features') {
       return setFeaturesActive(!featuresActive);
     }
