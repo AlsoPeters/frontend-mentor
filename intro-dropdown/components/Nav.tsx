@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 
 import Logo from '../public/photos/logo.svg';
 import FeaturesDropdown from './FeaturesDropdown';
@@ -8,11 +8,11 @@ import ArrowDown from '../public/photos/icon-arrow-down.svg';
 
 import Menu from '../public/photos/icon-menu.svg';
 
-export default function Nav(props: { handleMenu: any }): JSX.Element {
+export default function Nav(props: any): JSX.Element {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  function menuHelper(e: { target: { name: SetStateAction<string | null> } }) {
+  function menuHelper(e: any) {
     if (activeMenu === e.target.name) {
       return setActiveMenu(null);
     }
