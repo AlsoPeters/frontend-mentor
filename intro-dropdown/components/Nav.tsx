@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 
 import Logo from '../public/photos/logo.svg';
 import FeaturesDropdown from './FeaturesDropdown';
@@ -8,11 +8,11 @@ import ArrowDown from '../public/photos/icon-arrow-down.svg';
 
 import Menu from '../public/photos/icon-menu.svg';
 
-export default function Nav(props): JSX.Element {
+export default function Nav(props: { handleMenu: any }): JSX.Element {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  function menuHelper(e) {
+  function menuHelper(e: { target: { name: SetStateAction<string | null> } }) {
     if (activeMenu === e.target.name) {
       return setActiveMenu(null);
     }
@@ -92,19 +92,3 @@ export default function Nav(props): JSX.Element {
     </nav>
   );
 }
-
-// <div className='flex items-center w-full h-20 px-10 text-gray-500 xl:justify-between'>
-//   <div className='flex justify-between gap-10'>
-//     <div className='flex'>
-//       <div>
-//         <Logo />
-//       </div>
-//       <Menu />
-//     </div>
-
-//     {/* Start Desktop layout */}
-
-//   </div>
-//   <div className='flex gap-8 '>
-//   </div>
-// </div>
